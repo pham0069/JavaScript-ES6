@@ -1,0 +1,33 @@
+0. npm init
+generate and edit package.json
+
+1. Install babel
+npm config set strict-ssl false
+npm install -D babel-cli
+npm install -D babel-preset-es2015
+
+2. Modify .babelrc file
+vi .babelrc 
+{
+"presets": ["es2015"]
+}
+
+3. Mkdir src to contain the code in latest version
+
+4. Modify package.json file
+"scripts": {
+"test": "echo \"Error: no test specified\" && exit 1",
+"build": "babel --presets es2015 -d dst/ src"
+}
+
+5. Run babel
+npm run build
+This will transpile all ES6-syntax js files in src folder to ES5-syntax js files in dst folder
+
+6. Run js file
+node src/helloWorld.js
+node dst/helloWorld.js
+
+7. Tutorial links
+https://www.javascripttutorial.net/es6/es6-modules/
+https://javascript.info
